@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostgreSQL;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/PostgreSQL/Version', [PostgreSQL::class, 'version']);
+Route::get('/PostgreSQL/History', [PostgreSQL::class, 'queryHistory']);
